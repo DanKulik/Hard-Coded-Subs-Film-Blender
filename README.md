@@ -1,11 +1,11 @@
 # Hard-Coded-Subs-Film-Blender
 This python script is meant to blend HC subs into the background
 
-The way this script works is by user defining an aperture size and an RGB pixel range to mask. The script will then get an average RGB color for the aperture and apply this color to the masked region.
+The way this script works is by user defining an aperture size  where HC subs may be found and an RGB pixel range to mask (eg: for white subs the default values will work). The script will then use the Navier-Stokes inpainting function to approximate pixel colors for the masked region and apply them.
 
 It has been set up as a kwarg input function that requires at the very least the input & output file names.
-a docstring has been provided in the script to specify all the other parameters. And default parameters have also been
-set if none were initialized in the function call (except file names). An example function call exists at the bottom of the script as a guide, however the values are easily adjustable. Two parameters have not been added to the kwargs and these include the values used for both the mask Guassian blur (blurs the pixels around of the mask and surrounding area, therefore greater values means a wider area blurred), and the aperture Guassian blur (which is less sensative {essentially a secondary text blur} and the current input values should tend to work). The output is audio and subless and will require those components to be added with other software (eg: ffmpeg)
+A docstring has been provided in the script to specify all the other parameters. And default parameters have also been
+set if none were initialized in the function call (except file names). An example function call exists at the bottom of the script as a guide, however the values are easily adjustable. Two parameters have not been added to the kwargs and these include the values used for both the mask Guassian blur (blurs the pixels around the mask and surrounding area, therefore greater values means a wider area blurred), and the combined mask Guassian blur (which is less sensative {essentially a secondary text blur} however the current input values should tend to work). The output is audioless and subless and will require those components to be added with other software (eg: ffmpeg)
 
 Obviously the bigger the input file the longer it will take for this script to run. Eg: a 1.8h movie of 25fps will take about 3.5h to render. This can be sped up with the conv_rate param which controls the cpu output by using the time.sleep() function. The default value should use around 1 core/ or 25% cpu of processing power. Also mkv files seem to process much faster tha other video file types.
 
@@ -39,5 +39,5 @@ subs.save("my_subtitles_edited.ass")
 After this the fixed subs can be softcoded.
 
 Hope this will help when encoding films with hardcoded subs. Even though it is not the most elegant solution it is 
-still available. Greater minds may come up/ already have with better methods. Anyways... all the best and thank you 
+still available. Greater minds may come up/already have with better methods. Anyways... all the best and thank you 
 for your patronage, Severian-desu-ga
