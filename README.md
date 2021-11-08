@@ -40,4 +40,4 @@ After this the fixed subs can be softcoded.
 
 Hope this will help when encoding films with hardcoded subs. Even though it is not the most elegant solution it is 
 still available. Greater minds may come up/already have with better methods. Anyways... all the best and thank you 
-for your patronage, Severian-desu-ga
+for your patronage, DanKulik
